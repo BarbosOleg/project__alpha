@@ -1,0 +1,93 @@
+@import url(./normalize.css);
+@import url(./main-style.css);
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+}
+/* hide background image when screen width is less than 1024px */
+@media screen and (min-width: 1024px){
+    .form__background__image{
+        /* Set rules to fill background */
+        min-height: 100%;
+        min-width: 1024px;
+    
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+    
+        /* Set up positioning */
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+}
+@media screen and (max-width: 1024px){
+    .wrapper{
+        background: #444;
+        min-width: 400px;
+    }
+    .form__background__image{
+        display: none;
+    }
+}
+input{
+    width: 100%;
+    padding: 5px 7px;
+    border: none;
+    border-bottom: #dadada solid 2px;
+    border-radius: 5px;
+}
+input:focus{
+    outline: none;
+}
+.form__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    background: #fff;
+    min-width: 400px;
+    min-height: 380px;
+    padding: 40px 30px;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 3px 3px 3px var(--shadow-color);
+}
+form div{
+    margin: 0 0 20px 0;
+}
+.registration{
+    background: #fff;
+    width: 400px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: aqua;
+    box-shadow: 3px 3px 3px var(--shadow-color);
+}
+#form__button{
+    color: #dadada;
+    background: var(--main-black);
+}
+#form__button:hover{
+    color: #dadada;
+    background: var(--hover-color);
+}
+.form__help{
+    color: var(--help);
+}
+.error_msg{
+    display: none;
+    font-size: 14px;
+    color: red;
+}
