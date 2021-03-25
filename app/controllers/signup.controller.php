@@ -6,7 +6,7 @@ class Signup extends Controller
     {
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
-            $user = $this->load_model('user');
+            $user = $this->load_model("user");
             $user->signup($_POST);
         }
 

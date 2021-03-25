@@ -15,9 +15,9 @@ class Controller
 
     public function load_model($model_name)
     {
-        if(file_exists("../app/views/". strtolower($model_name) . ".class.php"))
+        if(file_exists("../app/models/". strtolower($model_name) . ".class.php"))
         {
-            include "../app/views/" . strtolower($model_name) . ".class.php";
+            include "../app/models/" . strtolower($model_name) . ".class.php";
             return $tmp = new $model_name();
         }
         return false;
