@@ -11,10 +11,10 @@ class User
         $email_regex    = "/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/";
         $name_regex     = "/^([A-Za-z0-9_\-.]{2,15})$/";
 
-        $data[':login']  = trim($post['form__login']);
-        $data[':pass ']  = trim($post['form__password']);
+        $data['login']  = trim($post['form__login']);
+        $data['password']  = trim($post['form__password']);
         $confirm_pass   = trim($post['form__confirm__password']);
-        $data[':email']  = trim($post['form__email']);
+        $data['email']  = trim($post['form__email']);
 
         if(empty($data['email']) || !preg_match($email_regex, $data['email']))
         {
@@ -27,21 +27,22 @@ class User
        
         if($this->error == "")
         {
-            $data[':rank']       = "user";
-            $data[':uid']        = $this->uid_gen(10);
-            $data[':reg_date']   = date("Y-m-d H:i:s");
-
+            $data['rank']       = "user";
+            $data['uid']        = $this->uid_gen(10);
+            $data['reg_date']   = date("Y-m-d H:i:s");
+    
             $query = "insert into users (uid, login, password, email, rank, reg_date) value (:uid, :login, :password, :email, :rank, :reg_date)";
             
             $db = DB::getInstance();
+            show($data);
             $result = $db->write($query, $data);
             if($result)
             {
                 header("Location: ". ROOT . "login");
                 die;
             }
-
-        }
+            
+        }else echo "Error! can't conn";
         
     }
 
@@ -65,5 +66,6 @@ class User
             $tmp = rand(0, 36); 
             $text .= $arr[$tmp];
         }
+        return $text;
     }
 }

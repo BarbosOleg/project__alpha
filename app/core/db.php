@@ -45,7 +45,7 @@ class DB
     *
     *   write in database
     */
-    public function write($query, $data = [])
+    public function write($query, $data = array())
     {
         $stm = self::$conn->prepare($query);
         $result = $stm->execute($data);
