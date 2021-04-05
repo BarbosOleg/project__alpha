@@ -3,18 +3,18 @@ const login_regex = /^([A-Za-z0-9_\-.]{2,15})$/;
 const mail_regex = /^([A-Za-z0-9_\-.+])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,})$/;
 //=============================================================
 //
-const login = document.getElementById('register__login');
-const password = document.getElementById('register__password');
-const confirm_password = document.getElementById('register__confirm__password');
-const email = document.getElementById('register__email');
-const error_blok = document.getElementsByClassName('error_msg');
-const red_alert = document.querySelectorAll('input');
+const login             = document.getElementById('register__login');
+const password          = document.getElementById('register__password');
+const confirm_password  = document.getElementById('register__confirm__password');
+const email             = document.getElementById('register__email');
+const error_blok        = document.getElementsByClassName('error_msg');
+const red_alert         = document.querySelectorAll('input');
 
 window.addEventListener('submit', (event) =>{
-    const login_value = login.value.trim();
-    const password_value = password.value.trim();
-    const confirm_password_value = confirm_password.value;
-    const email_value = email.value;
+    const login_value               = login.value.trim();
+    const password_value            = password.value.trim();
+    const confirm_password_value    = confirm_password.value;
+    const email_value               = email.value;
 
     if(!login_regex.test(login_value))
     {

@@ -9,6 +9,7 @@ session_cache_limiter('private_no_expire'); // works
  * start session and include init file 
  */
 session_start();
+$_SESSION['login'] = false;
 include "../app/init.php";
 
 $path = $_SERVER['REQUEST_SCHEME'] ."://". $_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];

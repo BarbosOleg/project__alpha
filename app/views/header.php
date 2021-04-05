@@ -26,8 +26,7 @@
                     </div>
                     <!-- block with user information/ registration/ log in -->
                     <?php
-                        $login = false;
-                        if(!$login)
+                        if($_SESSION['login'])
                         {
                             echo '
                                 <div class="header__user__reg" id="user__reg">
@@ -40,7 +39,8 @@
                             <!-- user -->
                             <div id="header__user">
                                 <div class="header__dropdown__menu">
-                                    <img src="<?= ASSETS?>pa/img/user_avatar.png" alt="user__avatar" class="user__avatar dropdown__menu">
+                                    <img src="' . ASSETS . 'pa/img/user_avatar.png" alt="user__avatar" class="user__avatar dropdown__menu">
+                                    <span class="username">' . $_SESSION['user_name'] . '<span>
                                     <div class="dropdown__content">
                                         <a href="">message</a>
                                         <a href="">my profile</a>
@@ -50,9 +50,7 @@
                             </div>
                             ';
                         }
-                    
                     ?>
-
                 </div>
             </div>
             <div class="content__banner">

@@ -28,14 +28,14 @@ class DB
     *
     *   read from database 
     */
-    public function read($query, $data = [])
+    public function read($query, $data = array())
     {
         $stm = self::$conn->prepare($query);
         $result = $stm->execute($data);
 
         if ($result) {
             $data = $stm->fetchAll(PDO::FETCH_OBJ);
-            if (is_array($data)) {
+            if (is_array($data) && count($data) > 0) {
                 return $data;
             }
         }

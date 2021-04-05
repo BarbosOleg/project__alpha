@@ -6,3 +6,12 @@ function show($data)
     print_r($data);
     echo "</pre>";
 }
+
+function error_check()
+{
+    if(isset($_SESSION['error']) && $_SESSION['error'] != "")
+    {
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
+}

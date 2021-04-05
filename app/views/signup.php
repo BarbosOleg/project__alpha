@@ -37,9 +37,10 @@
                     <label for="form__email">Email</label>
                     <input name="form__email" type="text" id="register__email" placeholder="email">
                     <small class="error_msg">Error: Valid email is required</small>
-
+                    <small style="font-size: 14px; color: red;"><?php error_check() ?></small>
                 </div>
                 <input type="submit" id="register__button" class="button" value="Register">
+
             </form>
         </div>
 

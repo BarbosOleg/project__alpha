@@ -15,7 +15,7 @@
     <div class="wrapper">
         <img class="form__background__image" src="<?= ASSETS . "pa" ?>/img/Excalibur.jpg" alt="">
         <div class="form__wrapper">
-            <form action="POST">
+            <form method="POST">
                 <h2>Login</h2>
                 <div>
                     <label for="form__login">Login</label>
@@ -23,7 +23,7 @@
                 </div>
                 <div>
                     <label for="form__password">Password</label>
-                    <input type="password" id="login__password" placeholder="Password" autocomplete="off">
+                    <input type="password" id="login__password" name="form__password" placeholder="Password" autocomplete="off">
                     <small class="error_msg">password or login is not correct</small>
                 </div>
                 <input type="submit" name="form__button" id="login__button" class="button" value="Sing Up">
